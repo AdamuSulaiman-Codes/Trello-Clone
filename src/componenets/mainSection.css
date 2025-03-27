@@ -1,0 +1,65 @@
+.main-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  background-color: #ECDFCC;
+  min-height: 100vh;
+}
+
+/* Column styling */
+.column {
+  background-color: #D9D9D9;
+  padding: 15px;
+  border-radius: 10px;
+  min-height: 400px;
+  transition: transform 0.3s ease;
+}
+
+.column:hover {
+  transform: scale(1.02);
+}
+
+/* Heading styling */
+h2 {
+  color: #181C14;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Task card styling */
+.task-card {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #3C3D37;
+}
+
+p {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+  color: #697565;
+}
+
+/* Responsive Design */
+
+/* Tablets: Two columns */
+@media (max-width: 1024px) {
+  .main-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: One column */
+@media (max-width: 768px) {
+  .main-section {
+    grid-template-columns: 1fr;
+  }
+}

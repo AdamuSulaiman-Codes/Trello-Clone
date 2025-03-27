@@ -1,0 +1,59 @@
+/* Form Styling */
+#board-form {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 350px;
+}
+
+/* Input Field */
+#board-name {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #393e46;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #393e46;
+  transition: border-color 0.3s ease-in-out;
+}
+
+#board-name::placeholder {
+  color: #393e46;
+  opacity: 0.7;
+}
+
+#board-name:focus {
+  outline: none;
+  border-color: #697565;
+  box-shadow: 0 0 5px rgba(74, 73, 72, 0.5);
+}
+
+/* Submit Button */
+#submit-btn {
+  width: 100%;
+  max-width: 160px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #697565;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#submit-btn:hover {
+  background-color: #69756577;
+  transform: scale(1.05);
+}
+
+#submit-btn:active {
+  transform: scale(0.95);
+}
