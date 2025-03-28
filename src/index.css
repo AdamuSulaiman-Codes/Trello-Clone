@@ -19,7 +19,13 @@ body {
 }
 
 
-
+#app-p{
+  background-color: #ECDFCC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
 .app {
   display: flex;
   flex-direction: column;
@@ -37,5 +43,8 @@ body {
 @media (max-width: 768px) {
   .app-section {
     grid-template-columns: 1fr;
+  }
+  #app-p{
+    height: 500px;
   }
 }

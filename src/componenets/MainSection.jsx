@@ -1,31 +1,51 @@
 import React from 'react';
 import './mainSection.css';
+import Column from './Column';
+import { useParams } from 'react-router'
+import { TrelloContext } from '../store/Trello-Context';
+import { useContext } from 'react';
+import { FaTrashAlt } from "react-icons/fa";
+import { useNavigate } from 'react-router';
 
 const MainSection = () => {
+  const {board, handleDeleteBoard} = useContext(TrelloContext)
+  const params = useParams()
+  const navigate = useNavigate()
+
+
+
+  const selectedBoard = board.find(boardItem => boardItem.id === params.id)
+
+  if(!selectedBoard){
+    return <p>Board not found. Please select a valid board</p>
+  }
   return (
-    <main className='main-section'>
-      <div className='column'>
-        <h2>To Do</h2>
-        <div className='task-card'>
-          <h3>UI Design Review</h3>
-          <p>Finalize wireframes</p>
-        </div>
+    <section id='main-section-container'>
+      <div className='playable'>
+        <h3>{selectedBoard.boardName}</h3>
+        <h3>{selectedBoard.date}</h3>
+        <FaTrashAlt color='red' className='icon' onClick={()=>{
+          console.log("Deleting board,");
+          handleDeleteBoard(selectedBoard.id)
+          navigate("/")
+        }}/>
       </div>
-      <div className='column'>
-        <h2>In Progress</h2>
-        <div className='task-card'>
-          <h3>Backend Development</h3>
-          <p>API implementation</p>
-        </div>
-      </div>
-      <div className='column'>
-        <h2>Done</h2>
-        <div className='task-card'>
-          <h3>Project Setup</h3>
-          <p>Initial configuration</p>
-        </div>
-      </div>
-    </main>
+      <main className='main-section'>
+        <Column 
+          todo
+          title={"To do"}
+          selectedBoardAction={selectedBoard.todos}
+          />
+        <Column 
+          title={"In Progress"}
+          selectedBoardAction={selectedBoard.inProgress}
+        />
+        <Column
+          title={"Done"}
+          selectedBoardAction={selectedBoard.Done}
+        />
+      </main>
+    </section>
   );
 };
 
