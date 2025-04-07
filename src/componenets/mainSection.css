@@ -100,6 +100,41 @@ p {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+
+
+.delete-btn-modal {
+  color: red; /* Sets the text color to red */
+  background: transparent; /* Keeps it minimal */
+  border: none; /* Removes default button border */
+  text-decoration: underline red; /* Adds a red underline */
+  cursor: pointer; /* Ensures it looks clickable */
+  font-weight: normal; /* Keeps it from being too bold */
+  padding: 5px 10px; /* Provides some spacing */
+}
+
+.delete-btn-modal:hover {
+  opacity: 0.8; /* Slight fade effect on hover */
+}
+
+
+
+ul.tasks-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li.task-list {
+  background-color: #697565;  /* muted green background */
+  color: #ECDFCC;             /* light beige text */
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  text-align: center;
+}
+
+
 /* Responsive Design */
 
 /* Tablets: Two columns */

@@ -21,6 +21,7 @@ const TodoForm = () => {
         title: titleRef.current.value,
         description: descriptionRef.current.value,
         id: randomId,
+        tasks: [],
     }
         
     handleCreateNewTodo(params.id, todo)
