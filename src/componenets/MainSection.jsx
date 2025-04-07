@@ -6,6 +6,8 @@ import { TrelloContext } from '../store/Trello-Context';
 import { useContext } from 'react';
 import { FaTrashAlt } from "react-icons/fa";
 import { useNavigate } from 'react-router';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 
 const MainSection = () => {
   const {board, handleDeleteBoard} = useContext(TrelloContext)
@@ -30,21 +32,23 @@ const MainSection = () => {
           navigate("/")
         }}/>
       </div>
-      <main className='main-section'>
-        <Column 
-          todo
-          title={"To do"}
-          selectedBoardAction={selectedBoard.todos}
+      <DndProvider backend={HTML5Backend}>
+        <main className='main-section'>
+          <Column 
+            todo
+            title={"To do"}
+            selectedBoardAction={selectedBoard.todos}
+            />
+          <Column 
+            title={"In Progress"}
+            selectedBoardAction={selectedBoard.inProgress}
           />
-        <Column 
-          title={"In Progress"}
-          selectedBoardAction={selectedBoard.inProgress}
-        />
-        <Column
-          title={"Done"}
-          selectedBoardAction={selectedBoard.Done}
-        />
-      </main>
+          <Column
+            title={"Done"}
+            selectedBoardAction={selectedBoard.Done}
+          />
+        </main>
+      </DndProvider>
     </section>
   );
 };

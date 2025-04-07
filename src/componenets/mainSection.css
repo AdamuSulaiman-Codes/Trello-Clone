@@ -126,12 +126,12 @@ ul.tasks-list {
 }
 
 li.task-list {
-  background-color: #697565;  /* muted green background */
-  color: #ECDFCC;             /* light beige text */
+  background-color: #D9D9D9;  /* muted green background */
+  color: #697565;             /* light beige text */
   padding: 10px;
   margin: 10px 0;
   border-radius: 5px;
-  text-align: center;
+  text-align: left;
 }
 
 
